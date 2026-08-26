@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise for Raina Mam | Birthday Tribute</title>
+    <meta name="description" content="A heartwarming cinematic birthday surprise video dedicated to Raina Mam.">
+    <!-- Google Fonts for cinematic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app-container" class="cinematic-wrapper">
+
+        <!-- Canvas FX Layer (Bokeh, Particles, Sunbeams, Candle, Confetti) -->
+        <canvas id="fx-canvas"></canvas>
+
+        <!-- Cinematic Grain & Ambient Overlay -->
+        <div class="film-grain"></div>
+        <div class="vignette"></div>
+
+        <!-- Cinema Letterbox Bars -->
+        <div class="letterbox top-bar"></div>
+        <div class="letterbox bottom-bar"></div>
+
+        <!-- Start Overlay / Welcome Screen -->
+        <div id="start-overlay" class="overlay-screen active">
+            <div class="start-card">
+                <div class="film-reel-icon">✨</div>
+                <h1 class="tribute-title">A Special Tribute</h1>
+                <p class="tribute-subtitle">For a Truly Exceptional Teacher</p>
+                <div class="start-prompt">
+                    <button id="start-btn" class="glow-btn">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">Begin Experience</span>
+                    </button>
+                    <p class="audio-notice">🔊 Sound enabled • Put on headphones for best experience</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Player Viewport & Scenes Container -->
+        <main id="stage" class="stage-container">
+
+            <!-- SCENE 1 — THE MYSTERY BEGINS -->
+            <section id="scene-1" class="scene terminal-scene">
+                <div class="terminal-box">
+                    <div class="terminal-content">
+                        <span id="scene1-text" class="type-text"></span><span class="cursor-blink">_</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE 2 — A STRANGE SEARCH -->
+            <section id="scene-2" class="scene search-scene">
+                <div class="search-card">
+                    <div class="search-header">
+                        <div class="browser-dot red"></div>
+                        <div class="browser-dot yellow"></div>
+                        <div class="browser-dot green"></div>
+                        <span class="browser-title">Global Database Search</span>
+                    </div>
+                    <div class="search-bar">
+                        <span class="search-icon">🔍</span>
+                        <div id="search-input-display" class="search-text"></div>
+                        <span class="search-cursor">|</span>
+                    </div>
+                    <div class="search-results">
+                        <div id="search-status" class="search-status-text"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE 3 — THE FIRST CLUE -->
+            <section id="scene-3" class="scene classroom-scene">
+                <div class="classroom-bg">
+                    <div class="sunbeam beam-1"></div>
+                    <div class="sunbeam beam-2"></div>
+                    <div class="classroom-elements">
+                        <div class="chalkboard-frame">
+                            <div class="chalk-text">Inspiring Minds • Shaping Futures</div>
+                        </div>
+                        <div class="desk-silhouette"></div>
+                    </div>
+                </div>
+                <div class="scene-typography center-align">
+                    <p id="scene3-line1" class="subtitle-text fade-in-slow">Some people teach lessons…</p>
+                    <p id="scene3-line2" class="gold-text-glow fade-in-delay">Some people become a lesson in themselves.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 4 — SECOND SURPRISE (MYSTERY MAINTAINED) -->
+            <section id="scene-4" class="scene notebook-scene">
+                <div class="notebook-3d-wrapper">
+                    <div class="notebook-page left-page">
+                        <div class="faint-lines"></div>
+                    </div>
+                    <div class="notebook-page right-page">
+                        <div class="faint-lines"></div>
+                        <div class="words-container">
+                            <span class="word-chip word-1">Guidance.</span>
+                            <span class="word-chip word-2">Patience.</span>
+                            <span class="word-chip word-3">Encouragement.</span>
+                            <span class="word-chip word-4">Inspiration.</span>
+                        </div>
+                        <div class="reveal-name-wrapper">
+                            <h2 id="scene4-name" class="name-partial">Someone…</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE 5 — MEMORY EFFECT -->
+            <section id="scene-5" class="scene memory-scene">
+                <div class="memory-grid">
+                    <div class="memory-card card-1"><div class="memory-img-mock blackboard">Chalkboard</div></div>
+                    <div class="memory-card card-2"><div class="memory-img-mock books">Wisdom Pages</div></div>
+                    <div class="memory-card card-3"><div class="memory-img-mock notes">Handwritten Notes</div></div>
+                    <div class="memory-card card-4"><div class="memory-img-mock sunlight">Sunlit Desk</div></div>
+                </div>
+                <div class="memory-text-overlay">
+                    <p id="s5-p1" class="mem-line">Years may pass…</p>
+                    <p id="s5-p2" class="mem-line">Classes may end…</p>
+                    <p id="s5-p3" class="mem-line">But some people…</p>
+                    <p id="s5-p4" class="mem-line highlight">…remain in our memories.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 6 — THE BIGGER MYSTERY -->
+            <section id="scene-6" class="scene reveal-terminal-scene">
+                <div class="terminal-dark-vignette">
+                    <div class="terminal-line">
+                        <span id="scene6-question" class="type-text"></span><span class="cursor-glow">|</span>
+                    </div>
+                    <div class="terminal-line type-target">
+                        <span id="scene6-typing-name" class="name-typing"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE 7 — THE SURPRISE REVEAL -->
+            <section id="scene-7" class="scene golden-reveal-scene">
+                <div class="golden-rays-bg"></div>
+                <div class="reveal-content">
+                    <p id="s7-text1" class="reveal-subtitle">YES…</p>
+                    <p id="s7-text2" class="reveal-subtitle-2">THIS ONE IS FOR YOU…</p>
+                    <h1 id="s7-hero-name" class="golden-hero-title">RAINA MAM <span class="heart-symbol">❤️</span></h1>
+                </div>
+            </section>
+
+            <!-- SCENE 8 — THE HEARTFELT MESSAGE -->
+            <section id="scene-8" class="scene message-scene">
+                <div class="floral-ambient-bg"></div>
+                <div class="quote-card">
+                    <p class="quote-line q1">“Some teachers teach from books…”</p>
+                    <p class="quote-line q2">“Some teach through words…”</p>
+                    <p class="quote-line q3">“But the truly special ones…”</p>
+                    <p class="quote-line q4 highlight-gold">“teach through the way they inspire us.”</p>
+                </div>
+            </section>
+
+            <!-- SCENE 9 — PERSONAL SURPRISE -->
+            <section id="scene-9" class="scene gift-scene">
+                <div class="gift-viewport">
+                    <div class="gift-box-3d" id="gift-box">
+                        <div class="gift-lid"></div>
+                        <div class="gift-base"></div>
+                        <div class="gift-ribbon"></div>
+                    </div>
+                    <div class="floating-virtues" id="virtues-container">
+                        <span class="virtue v-respect">Respect.</span>
+                        <span class="virtue v-gratitude">Gratitude.</span>
+                        <span class="virtue v-memories">Memories.</span>
+                        <span class="virtue v-love">Love.</span>
+                        <span class="virtue v-inspiration">Inspiration.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE 10 — FINAL BIRTHDAY REVEAL -->
+            <section id="scene-10" class="scene candle-scene">
+                <div class="candle-wrapper" id="candle-wrapper">
+                    <div class="candle-flame-anchor">
+                        <div class="flame-glow-halo"></div>
+                    </div>
+                </div>
+                <div class="candle-typography">
+                    <p id="s10-p1" class="candle-text">Today isn't just another day…</p>
+                    <p id="s10-p2" class="candle-text-main">It's the day someone wonderful was born.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 11 — FINAL WISH -->
+            <section id="scene-11" class="scene celebration-scene">
+                <div class="decorations-layer">
+                    <div class="golden-banner-frame"></div>
+                </div>
+                <div class="celebration-content">
+                    <h3 class="wishing-pre">HAPPY BIRTHDAY</h3>
+                    <h1 class="grand-name">RAINA MAM <span class="heart-pulse">❤️</span></h1>
+                    <div class="divider-gold">❖</div>
+                    <p class="wish-quote">“May your smile always remain as beautiful as the inspiration you give to others.”</p>
+                    <p class="wish-closing">Wishing you happiness, peace, success and countless beautiful moments.</p>
+                </div>
+            </section>
+
+            <!-- SCENE 12 — PHOTO SHOWCASE SLIDESHOW -->
+            <section id="scene-12" class="scene photoshow-scene">
+                <div class="photo-slideshow-container">
+                    <div class="photo-frame-wrapper" id="photo-frame-wrapper">
+                        <div class="cinematic-photo-card active-photo" id="photo-card-1">
+                            <img src="assets/images/photo1.png" alt="Raina Mam Portrait" class="hero-photo-img">
+                            <div class="photo-caption-overlay">
+                                <span>A Graceful & Inspiring Presence 🌸</span>
+                            </div>
+                        </div>
+                        <div class="cinematic-photo-card" id="photo-card-2">
+                            <img src="assets/images/photo2.png" alt="Raina Mam with Student" class="hero-photo-img">
+                            <div class="photo-caption-overlay">
+                                <span>Cherished Moments & Unforgettable Guidance ❤️</span>
+                            </div>
+                        </div>
+                        <div class="cinematic-photo-card" id="photo-card-3">
+                            <img src="assets/images/photo3.jpg" alt="Raina Mam Birthday Celebration" class="hero-photo-img">
+                            <div class="photo-caption-overlay">
+                                <span>Celebrating a Wonderful Person ✨</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCENE 13 — TYPEWRITER PERSONAL LETTER BY SWATHI (STAYS 1 FULL MINUTE) -->
+            <section id="scene-13" class="scene letter-scene">
+                <div class="letter-scroll-card">
+                    <div class="letter-header">
+                        <span class="tulip-icon">🌷</span>
+                        <h2 class="letter-salutation">Happy Birthday, Raina Mam… ❤️</h2>
+                    </div>
+                    <div class="letter-body">
+                        <p id="let-p1" class="letter-p"></p>
+                        <p id="let-p2" class="letter-p"></p>
+                        <p id="let-p3" class="letter-p"></p>
+                        <p id="let-p4" class="letter-p"></p>
+                        <p id="let-p5" class="letter-p highlight-gold-box"></p>
+                        <p id="let-p6" class="letter-p quote-footer"></p>
+                        <div id="let-sign" class="letter-signature"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINAL 5-SECOND SURPRISE (P.S.) -->
+            <section id="scene-ps" class="scene ps-scene">
+                <div class="ps-content">
+                    <span id="ps-tag" class="ps-title">P.S.</span>
+                    <p id="ps-line1" class="ps-sub">You are not just remembered…</p>
+                    <p id="ps-line2" class="ps-sub-highlight">You are remembered with a smile. ❤️</p>
+                    <div id="ps-final-greeting" class="ps-final">
+                        <p class="final-wish-text">Happy Birthday, Raina Mam 🎂✨</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Player Controls Bar -->
+        <div id="controls-bar" class="controls-container">
+            <div class="progress-bar-wrapper" id="progress-container">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <div class="controls-main">
+                <div class="left-controls">
+                    <button id="btn-play-pause" class="ctrl-btn" title="Play/Pause (Space)">
+                        <span id="play-icon" class="icon">⏸</span>
+                    </button>
+
+                    <button id="btn-replay" class="ctrl-btn" title="Replay Experience">
+                        <span class="icon">🔄</span>
+                    </button>
+
+                    <button id="btn-mute" class="ctrl-btn" title="Toggle Audio (M)">
+                        <span id="mute-icon" class="icon">🔊</span>
+                    </button>
+
+                    <div class="timer-display">
+                        <span id="time-current">00:00</span> / <span id="time-total">02:33</span>
+                    </div>
+                </div>
+
+                <div class="center-controls">
+                    <select id="scene-selector" class="scene-select" title="Jump to Scene">
+                        <option value="0">Scene 1: The Mystery</option>
+                        <option value="1">Scene 2: The Search</option>
+                        <option value="2">Scene 3: First Clue</option>
+                        <option value="3">Scene 4: Second Surprise</option>
+                        <option value="4">Scene 5: Memories</option>
+                        <option value="5">Scene 6: Bigger Mystery</option>
+                        <option value="6">Scene 7: Golden Reveal</option>
+                        <option value="7">Scene 8: Heartfelt Message</option>
+                        <option value="8">Scene 9: Personal Surprise</option>
+                        <option value="9">Scene 10: Candle Reveal</option>
+                        <option value="10">Scene 11: Final Wish</option>
+                        <option value="11">Scene 12: Photo Showcase</option>
+                        <option value="12">Scene 13: Personal Letter</option>
+                        <option value="13">P.S. Surprise</option>
+                    </select>
+                </div>
+
+                <div class="right-controls">
+                    <button id="btn-fullscreen" class="ctrl-btn" title="Toggle Fullscreen (F)">
+                        <span class="icon">⛶</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/scenes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
